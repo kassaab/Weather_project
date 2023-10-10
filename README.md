@@ -1,5 +1,5 @@
 # Weather_app
-Uodate: The app now gives usrs the option to compare weather and 5 days forecast between any two cities in the world.
+Uodate: The app now gives usrs the option to compare current weather and 5 days forecast between any two cities in the world.
         The weather app now uses python framwork, Django for user interface, which makes the it much faster and easier to use.
 
 
