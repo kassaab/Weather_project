@@ -2,10 +2,12 @@ import datetime
 import requests
 import json
 from django.shortcuts import render
+import environ
 
-with open('/Users/abrhamkassa/Weather_Dj/weather_project/weather_app/config.json') as config_file:
-    config = json.load(config_file)
-    API_KEY = config.get('api_key')
+env = environ.Env()
+environ.Env.read_env()
+
+API_KEY = env('MY_API_KEY')
 
 if API_KEY is None:
     raise ValueError("API key not found")
