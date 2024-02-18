@@ -5,6 +5,61 @@
     <meta charset="UTF-8">
     <title>Weather App</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+         body {
+   font-family: Arial, sans-serif;
+   background-color: #f2f2f2;
+   text-align: center;
+   padding: 50px;
+ }
+
+ form {
+   margin: 20px 0;
+ }
+
+ input[type="text"] {
+   padding: 5px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+ }
+
+ button {
+   background-color: #4CAF50;
+   color: white;
+   padding: 5px 10px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+ }
+
+ .forecast-container {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+ }
+
+ .forecast {
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   padding: 10px;
+   margin: 10px;
+   width: calc(100% / 5 - 20px);
+   box-sizing: border-box;
+ }
+
+ @media (max-width: 767px) {
+   .forecast {
+     width: calc(50% - 20px);
+   }
+ }
+
+ @media (max-width: 480px) {
+   .forecast {
+     width: 100%;
+   }
+ }
+    </style>
 </head>
 <body>
 <form method="post">
@@ -27,12 +82,10 @@
     {% endif %}
 </div>
 <script>
-    // Get references to the input fields and the submit button
     const city1Input = document.querySelector('input[name="city1"]');
     const city2Input = document.querySelector('input[name="city2"]');
     const submitButton = document.querySelector('button[type="submit"]');
 
-    // Function to update button text based on input in city2
     function updateButtonText() {
         if (city2Input.value.trim() !== '') {
             submitButton.textContent = 'Compare Weather';
@@ -41,7 +94,6 @@
         }
     }
 
-    // Add event listeners to both input fields
     city1Input.addEventListener('input', updateButtonText);
     city2Input.addEventListener('input', updateButtonText);
 </script>
